@@ -76,6 +76,12 @@ resource "aws_instance" "jenkins" {
 
               # Install Java (required for Jenkins)
               sudo apt install openjdk-17-jdk -y
+              
+              # Install Git
+              sudo apt install git -y
+              
+              # Install Maven
+              sudo apt install maven -y
 
               # Add Jenkins repository and key
               sudo mkdir -p /usr/share/keyrings && wget -O- https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
